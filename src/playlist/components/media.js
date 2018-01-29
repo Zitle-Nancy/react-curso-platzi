@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 
+const styles = {
+		container:{
+			"fontSize":25,
+			"backgroundColor":'red',
+			'color':'white'
+		}
+	}
 class Media extends Component {
+
 	render() {
 		return (
-			<div>
+			<div style={styles.container}>
 				<div>
 					<img 
 						src="" 
