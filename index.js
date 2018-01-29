@@ -5,6 +5,6 @@ import Media from './src/playlist/components/media';
 
 render( <Media title="Responsive Design" 
 			   author = "Nancy Zitle Juarez"
-			   image = ".././images/covers/bitcoin.jpg" 
+			   image = ".././images/covers/responsive.jpg" 
 		/> , app);
 
