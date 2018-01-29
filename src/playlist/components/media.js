@@ -1,26 +1,27 @@
 import React, { Component } from 'react';
+import './media.css'
 
-const styles = {
+/* const styles = {
 		container:{
 			"fontSize":25,
 			"backgroundColor":'red',
 			'color':'white'
 		}
 	}
+*/
 class Media extends Component {
-
 	render() {
 		return (
-			<div style={styles.container}>
-				<div>
+			<div className="Media">
+				<div className="Media-image">
 					<img 
-						src="" 
+						src=".././images/covers/bitcoin.jpg" 
 						alt="Deberia de salir una imagen"
 						width={260}
 						height={160}
 					/>
-					<h3>Por que..</h3>
-					<p>Nancy</p>
+					<h3 className="Media-title">React!!</h3>
+					<p className="Media-author">Nancy Zitle</p>
 				</div>
 			</div>
 		);
