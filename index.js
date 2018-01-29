@@ -5,7 +5,7 @@ import Media from './src/playlist/components/media';
 // para enviar numeros es {123}..numeros
 render( <Media title="Responsive Design" 
 			   author = "Nancy Zitle"
-			   type = "video no ma"
+			   type = "video"
 			   image = ".././images/covers/responsive.jpg" 
 		/> , app);
 
