@@ -15,13 +15,13 @@ class Media extends Component {
 			<div className="Media">
 				<div className="Media-image">
 					<img 
-						src=".././images/covers/bitcoin.jpg" 
+						src = {this.props.image}
 						alt="Deberia de salir una imagen"
 						width={260}
 						height={160}
 					/>
-					<h3 className="Media-title">React!!</h3>
-					<p className="Media-author">Nancy Zitle</p>
+					<h3 className="Media-title">{this.props.title}</h3>
+					<p className="Media-author">{this.props.author}</p>
 				</div>
 			</div>
 		);

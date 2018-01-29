@@ -3,8 +3,8 @@ import React from 'react';
 import { render } from 'react-dom'; //Una forma de hacerlo
 import Media from './src/playlist/components/media';
 
-const container = document.getElementById('app');
-const texto = <h1> Hola Nancy </h1>;
-
-render( <Media /> , app);
+render( <Media title="Responsive Design" 
+			   author = "Nancy Zitle Juarez"
+			   image = ".././images/covers/bitcoin.jpg" 
+		/> , app);
 
