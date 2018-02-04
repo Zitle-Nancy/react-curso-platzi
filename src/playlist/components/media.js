@@ -21,7 +21,7 @@ class Media extends Component {
 	// 		author:"Prueba"
 	// 	})
 	// }
-	/*aqui van las funciones*/
+	/*aqui van las funciones*/    
 	// ejemplo hecho en ECMS6
 	handleClick = (event) => {
 		// console.log(this.props.image);

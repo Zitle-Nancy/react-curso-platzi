@@ -1,11 +1,8 @@
 import React from 'react';
 // import ReactDOM from 'react-dom'; //version antigua
 import { render } from 'react-dom'; //Una forma de hacerlo
-import Media from './src/playlist/components/media';
+import Playlist from './src/playlist/components/playlist';
+import data from './src/api.json';
 // para enviar numeros es {123}..numeros
-render( <Media title="Responsive Design" 
-			   author = "Nancy Zitle"
-			   type = "video"
-			   image = ".././images/covers/responsive.jpg" 
-		/> , app);
+render( < Playlist data = {data} /> , app);
 
