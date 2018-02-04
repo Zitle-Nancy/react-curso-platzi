@@ -8,7 +8,15 @@ class Media extends Component {
 		this.state = {
 			author:props.author
 		}
+		// debemos bindear la funcion, dentro de nuestro metodo constructor
 		this.handleClick = this.handleClick.bind(this);
+	}
+	// debemos crear al funcion 
+	handleClick(event) {
+		console.log(this.props.image);
+		this.setState({
+			author:"Prueba"
+		})
 	}
 	/*aqui van las funciones*/
 	// ejemplo hecho en ECMS6
