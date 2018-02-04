@@ -3,19 +3,20 @@ import Media from './media.js';
 import './playlist.css';
 
 export default class Playlist extends Component {
-	render(){
-		const playlist = this.props.data.categories[0].playlist;
-		// console.log(playlist);
+	render() {
+		const categories = this.props.data.categories;
 		return(
-			<div className = 'playlist'>
-				{
-					playlist.map((elemento, indice) => {
-						console.log(<Media title = {elemento.author} key = {indice}/>);
-						return <Media {...elemento} key = {indice}/>
-
-					})
-				}
-			</div>
-		);
+				<div className = 'playlist'>
+					{
+						categories.map((elemento,indice) => {
+							const playlists = elemento.playlist;
+							playlists.map((playlist, item) => {
+								console.log(playlist.title);
+								return < Media {...playlist} key = {item} />
+							})
+						})
+					}
+				</div>
+			);
 	}
 }
