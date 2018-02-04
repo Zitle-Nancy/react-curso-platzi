@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import './media.css';
 
 class Media extends Component {
-	state = {
-		author: 'No entiendo'
-	}
 	// constructor(props){
 	// 	super(props)
 	// 	this.state = {
@@ -32,26 +29,29 @@ class Media extends Component {
 	render() {
 		return (
 			// handleClick, solo es el nombre de la funcion, puede ir el que sea
-			<div className="Media" onClick = {this.handleClick}>
-				<div className="Media-image">
+			<div className="Media card" onClick = {this.handleClick}>
+				<div className="Media-image card-image">
 					<img 
-						src = {this.props.image}
+						src = {this.props.cover}
 						alt="Deberia de salir una imagen"
 						width={260}
 						height={160}
 					/>
+				</div>
+				<div className = "card-content">
 					<h3 className="Media-title">{this.props.title}</h3>
-					<p className="Media-author">{this.state.author}</p>
+					<p className="Media-author">{this.props.author}</p>
 				</div>
 			</div>
 		);
 	}
 }
 /* observar como se escribe propTypes y PropTypes */
-Media.propTypes = {
+/* Media.propTypes = {
 	image: PropTypes.string,
 	title: PropTypes.string,
 	author: PropTypes.string.isRequired,
 	type: PropTypes.oneOf(['video','audio']),   
 }
+*/
 export default Media;
