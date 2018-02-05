@@ -20,16 +20,16 @@ class Media extends Component {
 	// }
 	/*aqui van las funciones*/    
 	// ejemplo hecho en ECMS6
-	handleClick = (event) => {
-		// console.log(this.props.image);
-		this.setState({
-			author:'Prueba con ECMS6'
-		})
-	}
+	// handleClick = (event) => {
+	// 	// console.log(this.props.image);
+	// 	this.setState({
+	// 		author:'Prueba con ECMS6'
+	// 	})
+	// }
 	render() {
+		console.log(this.props, 'aqui');
 		return (
-			// handleClick, solo es el nombre de la funcion, puede ir el que sea
-			<div className="Media card" onClick = {this.handleClick}>
+			<div className="Media card">
 				<div className="Media-image card-image">
 					<img 
 						src = {this.props.cover}
