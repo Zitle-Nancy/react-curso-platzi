@@ -1,11 +1,14 @@
 import React from 'react';
-
 function Icon(props){
+	const {
+		color,
+		size,
+	} = props
 	return(
 			<svg 
-				fill = {props.color}
-				height = {props.height}
-				width = {props.width}
+				fill = {color}
+				height = {size}
+				width = {size}
 				viewBox = "0 0 32 32" 
 			>
 				{this.props.children}
