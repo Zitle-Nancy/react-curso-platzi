@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import HomeLayout from '../components/home-layout';
 import Categories from '../../category/components/categories';
 import Related from '../components/related';
+import ModalContainer from '../../widgets/containers/modal-container';
 
 class Home extends Component {
 	render(){
@@ -9,7 +10,10 @@ class Home extends Component {
 				<HomeLayout>
 					<Related />
 					<Categories categories = {this.props.data.categories} />
-				</HomeLayout> 
+					<ModalContainer>
+						<h1>Portales</h1>
+					</ModalContainer>
+				</HomeLayout>
 			)
 	}
 }
