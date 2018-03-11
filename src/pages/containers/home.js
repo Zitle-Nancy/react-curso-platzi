@@ -7,7 +7,12 @@ import Modal from '../../widgets/components/modal';
 
 class Home extends Component {
 	state = {
-		modalVisible: true,
+		modalVisible: false,
+	}
+	handleOpenModal = () => {
+		this.setState({
+			modalVisible: true,
+		})
 	}
 	handleCloseModalClck = (event) => {
 		this.setState({
@@ -18,7 +23,9 @@ class Home extends Component {
 		return(
 				<HomeLayout>
 					<Related />
-					<Categories categories = {this.props.data.categories} />
+					<Categories categories = {this.props.data.categories}
+					 handleOpenModal={this.handleOpenModal}
+					/>
 					{this.state.modalVisible &&
 						<ModalContainer>
 							<Modal handleClick = {this.handleCloseModalClck}>

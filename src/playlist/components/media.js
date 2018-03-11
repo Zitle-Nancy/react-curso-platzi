@@ -11,14 +11,14 @@ class Media extends PureComponent {
 	// 	// debemos bindear la funcion, dentro de nuestro metodo constructor
 	// 	this.handleClick = this.handleClick.bind(this);
 	// }
-	// debemos crear al funcion 
+	// debemos crear al funcion
 	// handleClick(event) {
 	// 	// console.log(this.props.image);
 	// 	this.setState({
 	// 		author:"Prueba"
 	// 	})
 	// }
-	/*aqui van las funciones*/    
+	/*aqui van las funciones*/
 	// ejemplo hecho en ECMS6
 	// handleClick = (event) => {
 	// 	// console.log(this.props.image);
@@ -27,11 +27,10 @@ class Media extends PureComponent {
 	// 	})
 	// }
 	render() {
-		console.log(this.props, 'aqui');
 		return (
-			<div className="Media card">
+			<div className="Media card" onClick = {this.props.handleClick}>
 				<div className="Media-image card-image">
-					<img 
+					<img
 						src = {this.props.cover}
 						alt="Deberia de salir una imagen"
 						width={260}
@@ -51,7 +50,7 @@ class Media extends PureComponent {
 	image: PropTypes.string,
 	title: PropTypes.string,
 	author: PropTypes.string.isRequired,
-	type: PropTypes.oneOf(['video','audio']),   
+	type: PropTypes.oneOf(['video','audio']),
 }
 */
 export default Media;
