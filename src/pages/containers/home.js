@@ -8,6 +8,7 @@ import Modal from '../../widgets/components/modal';
 class Home extends Component {
 	state = {
 		modalVisible: false,
+		handleError:false,
 	}
 	handleOpenModal = () => {
 		this.setState({
@@ -19,11 +20,20 @@ class Home extends Component {
 			modalVisible: false,
 		})
 	}
+	componentDidCatch(error, info){
+		this.setState({
+			handleError:true
+		})
+	}
+
 	render(){
+		if(this.state.handleError){
+			return <p>OHH hubo un error</p>
+		}
 		return(
 				<HomeLayout>
 					<Related />
-					<Categories categories = {this.props.data.categories}
+					<Categories categories = {this.props.data}
 					 handleOpenModal={this.handleOpenModal}
 					/>
 					{this.state.modalVisible &&
