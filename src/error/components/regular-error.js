@@ -1,7 +1,7 @@
 import React from 'react';
-
+import imagesError from '../../../images/404.png'
 export default function RegularError(){
     return(
-        <h1 style={{color:'white'}}>Ha ocurrido un error</h1>
+        <img src={imagesError} alt = "imagen 404" />
     )
 }
