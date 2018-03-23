@@ -12,7 +12,7 @@ const Search = (props)=>(
 				type="text" 
 				className="search-input"
 				placeholder= "Busca tu canción favorita"
-				value="Luis"
+				defaultValue="Luis"
 			/>
 		</form>
 )
