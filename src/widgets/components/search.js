@@ -7,7 +7,8 @@ const Search = (props)=>(
 			className="search"
 			onSubmit = {props.handleSumbit}
 		>
-			<input 
+			<input
+				ref={props.setRef} 
 				type="text" 
 				className="search-input"
 				placeholder= "Busca tu canción favorita"
