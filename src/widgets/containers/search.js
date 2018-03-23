@@ -23,7 +23,7 @@ export default class SearchContainer extends Component{
 	*/
 	handleInputChange = event => {
 		this.setState({
-			value: event.target.value
+			value: event.target.value.replace(' ','-')
 		})
 	}
 	render(){
