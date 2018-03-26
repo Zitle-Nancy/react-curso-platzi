@@ -1,7 +1,7 @@
 import React from 'react';
 import './video-player-layout.css';
 
-const VideoPlayerLayout = () => (
+const VideoPlayerLayout = (props) => (
     <div className="video-player">
         {props.children}
     </div>
