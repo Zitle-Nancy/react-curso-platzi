@@ -7,7 +7,6 @@ export default class Video extends Component {
 		}else{
 			this.video.pause();
 		}
-		
 	}
 	componentWillReceiveProps(nextProps){
 		if(nextProps.pause !== this.props.pause){
@@ -18,14 +17,19 @@ export default class Video extends Component {
 		this.video = element;
 	}
 	render(){
-			return( 
-				<div className="video">
-					<video
-						ref={this.setRef}
-						autoPlay = {this.props.autoplay}
-						src={this.props.src}
-					/>
-				</div>   
-			)
+		const {
+			handleLoadedMetadata
+		} = this.props;
+
+		return( 
+			<div className="video">
+				<video
+					ref={this.setRef}
+					autoPlay = {this.props.autoplay}
+					src={this.props.src}
+					onLoadedMetadata={handleLoadedMetadata}
+				/>
+			</div>   
+		)
 	}
 }
