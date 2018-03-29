@@ -30,6 +30,7 @@ export default class VideoPlayer extends Component{
 							/>
 							<Video 
 								autoplay={this.props.autoplay}
+								pause={this.state.pause}
 								src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
 							/>
             </VideoPlayerLayout>
