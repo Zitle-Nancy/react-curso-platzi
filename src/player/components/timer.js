@@ -6,7 +6,7 @@ export default function Timer(props){
     <div className="timer">
       <p>
         <span>
-          00 / {props.duration}
+          {props.currentTime} / {props.duration}
         </span>
       </p>
     </div>
