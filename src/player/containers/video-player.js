@@ -54,7 +54,8 @@ export default class VideoPlayer extends Component{
 									currentTime={this.state.currentTime}
 								/>
 								<ProgressBar 
-						
+									duration={this.state.duration}
+									value={this.state.currentTime}
 								/>
 							</Controls>
 							<Video 
