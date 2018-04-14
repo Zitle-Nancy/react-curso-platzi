@@ -17,7 +17,7 @@
   transform-origin: 0 0;
   display: none;
   width: 5rem;
-  height: 30px;
+  /* height: 30px; */
   bottom: 1px;
   left: 10px;
   padding: .25rem;
@@ -25,9 +25,9 @@
 
 input[type=range]{
   cursor: -webkit-grab;
-  width: 85%;
+  width: 100%;
   vertical-align: middle;
-  height: 1.5rem;
+  /* height: 1.5rem; */
   border: none;
 }
 
