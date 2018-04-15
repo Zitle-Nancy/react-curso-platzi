@@ -67,24 +67,24 @@ export default class VideoPlayer extends Component{
 				mute:!this.state.mute,
 				// ponemos el rango del input hasta abajo 
 				rangeValue:0
+			},()=>{
+				if(this.state.mute){
+					// ponemos el volumen del video en cero
+					this.setState({
+						rangeValue: 0
+					})
+					this.video.volume = 0
+				}else{
+					// ponemos el volumen del video en cero
+					this.setState({
+						rangeValue: 1
+					})
+					this.video.volume =  1
+				}
 			})
 			
 
 			// usar el valor al que sera actualizado del state
-			if(this.state.mute){
-				// ponemos el volumen del video en cero
-				this.setState({
-					rangeValue: 1
-				})
-				this.video.volume = 1
-			}else{
-				// ponemos el volumen del video en cero
-				this.setState({
-					rangeValue: 0
-				})
-				this.video.volume =  0
-			}
-
 		}
     render(){
         return(
