@@ -27,7 +27,7 @@ export default function Volume(props){
           max={1}
           step={.05}
           onChange={props.handleVolumeChange}
-          value={props.volume}
+          value={props.rangeValue}
         />
       </div>
     </div>
