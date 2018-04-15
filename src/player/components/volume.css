@@ -34,3 +34,6 @@ input[type=range]{
 .volume:hover .volume-range{
   display: flex;
 }
+.borde{
+  border: solid red 2px;
+}
