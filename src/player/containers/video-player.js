@@ -16,8 +16,7 @@ export default class VideoPlayer extends Component{
 			currentTime:0,
 			loading:false,
 			mute:false,
-			volume:1,
-			lastVolume:1
+			rangeValue:1
 		}
 		togglePlay = () =>{
 			this.setState({
@@ -60,23 +59,32 @@ export default class VideoPlayer extends Component{
 		
 		handleVolumeChange = event => {
 			const volume = this.video.volume = event.target.value;
-			// this.video.volume = event.target.value;
-			// console.log(this.video.volume = event.target.value);
-			this.setState({
-				volume:volume,
-				lastVolume:volume,
-				mute: volume > 0 ? false : true /* <- mute:!(volume > 0) */
-			},()=>{
-			})
+		
 		}
 		
 		handleVolumeMute = event => {
 			this.setState({
 				mute:!this.state.mute,
-				volume:!this.state.mute ? 0 : this.state.lastVolume
-			},()=>{
-				this.video.volume = this.state.mute ? 0 : this.state.lastVolume
+				// ponemos el rango del input hasta abajo 
+				rangeValue:0
 			})
+			
+
+			// usar el valor al que sera actualizado del state
+			if(this.state.mute){
+				// ponemos el volumen del video en cero
+				this.setState({
+					rangeValue: 1
+				})
+				this.video.volume = 1
+			}else{
+				// ponemos el volumen del video en cero
+				this.setState({
+					rangeValue: 0
+				})
+				this.video.volume =  0
+			}
+
 		}
     render(){
         return(
@@ -102,7 +110,7 @@ export default class VideoPlayer extends Component{
 									handleVolumeChange={this.handleVolumeChange}
 									handleVolumeMute={this.handleVolumeMute}
 									mute={this.state.mute}
-									volume={this.state.volume}
+									volume={this.state.rangeValue}
 								/>
 							</Controls>
 							<Spinner 
