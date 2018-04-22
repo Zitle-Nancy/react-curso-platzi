@@ -8,6 +8,7 @@ import PlayPause from '../components/play-pause';
 import ProgressBar from '../components/progress-bar';
 import Spinner from '../components/spinner';
 import Volume from '../components/volume';
+import FullScreen from '../../player/components/full-screen';
 
 export default class VideoPlayer extends Component{
 		state = {
@@ -56,8 +57,7 @@ export default class VideoPlayer extends Component{
 			this.setState({
 				loading:true
 			})
-		}
-		
+		}	
 		handleVolumeChange = event => {
 			const volume = this.video.volume = event.target.value;
 			this.setState({
@@ -77,7 +77,6 @@ export default class VideoPlayer extends Component{
 				}
 			})	
 		}
-		
 		handleVolumeMute = event => {
 			this.setState({
 				mute:!this.state.mute,
@@ -99,9 +98,19 @@ export default class VideoPlayer extends Component{
 				}
 			})
 		}
+		handleFullScreenClick = event => {
+			if(!document.webkitIsFullScreen){
+				this.player.webkitRequestFullScreen();
+			}
+		}
+		setRef = element => {
+			this.player = element;
+		}
     render(){
         return(
-            <VideoPlayerLayout>
+            <VideoPlayerLayout
+							setRef={this.setRef}
+						>
 							<Title
 								title="Mi primer video en React :)"
 							/>
@@ -124,6 +133,9 @@ export default class VideoPlayer extends Component{
 									handleVolumeMute={this.handleVolumeMute}
 									mute={this.state.mute}
 									rangeValue={this.state.rangeValue}
+								/>
+								<FullScreen 
+									handleFullScreenClick={this.handleFullScreenClick}
 								/>
 							</Controls>
 							<Spinner 
