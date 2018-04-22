@@ -101,6 +101,8 @@ export default class VideoPlayer extends Component{
 		handleFullScreenClick = event => {
 			if(!document.webkitIsFullScreen){
 				this.player.webkitRequestFullScreen();
+			}else{
+				document.webkitExitFullscreen();
 			}
 		}
 		setRef = element => {
