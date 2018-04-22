@@ -114,7 +114,7 @@ export default class VideoPlayer extends Component{
 							setRef={this.setRef}
 						>
 							<Title
-								title="Mi primer video en React :)"
+								title={this.props.title}
 							/>
 							<Controls>
 								<PlayPause 
@@ -148,7 +148,7 @@ export default class VideoPlayer extends Component{
 								pause={this.state.pause}
 								handleLoadedMetadata={this.handleLoadedMetadata}
 								handleTimeUpdate={this.handleTimeUpdate}
-								src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+								src={this.props.src}
 								handleSeeked={this.handleSeeked}
 								handleSeeking={this.handleSeeking}
 							/>

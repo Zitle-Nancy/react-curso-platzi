@@ -3,32 +3,14 @@ import PropTypes from 'prop-types';
 import './media.css';
 
 class Media extends PureComponent {
-	// constructor(props){
-	// 	super(props)
-	// 	this.state = {
-	// 		author:props.author
-	// 	}
-	// 	// debemos bindear la funcion, dentro de nuestro metodo constructor
-	// 	this.handleClick = this.handleClick.bind(this);
-	// }
-	// debemos crear al funcion
-	// handleClick(event) {
-	// 	// console.log(this.props.image);
-	// 	this.setState({
-	// 		author:"Prueba"
-	// 	})
-	// }
 	/*aqui van las funciones*/
-	// ejemplo hecho en ECMS6
-	// handleClick = (event) => {
-	// 	// console.log(this.props.image);
-	// 	this.setState({
-	// 		author:'Prueba con ECMS6'
-	// 	})
-	// }
+	handleClick = event => {
+		// por las props le mandamos las propiedades de nuestro video para que acceda a ellas
+		this.props.openModal(this.props);
+	}
 	render() {
 		return (
-			<div className="Media card" onClick = {this.props.handleClick}>
+			<div className="Media card" onClick = {this.handleClick}>
 				<div className="Media-image card-image">
 					<img
 						src = {this.props.cover}

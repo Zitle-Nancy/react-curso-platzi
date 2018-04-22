@@ -12,12 +12,14 @@ class Home extends Component {
 	state = {
 		modalVisible: false,
 	}
-	handleOpenModal = () => {
+	// el argumento media lo recibe en props de media.js
+	handleOpenModal = (media) => {
 		this.setState({
 			modalVisible: true,
+			media /*  solo media porque se llaman igual ECMS6 */
 		})
 	}
-	handleCloseModalClck = (event) => {
+	handleCloseModalClick = (event) => {
 		this.setState({
 			modalVisible: false,
 		})
@@ -27,16 +29,18 @@ class Home extends Component {
 				<HandleError>
 					<HomeLayout>
 						<Related />
-						<VideoPlayer 
-							autoplay={false}
-						/>
-						<Categories categories = {this.props.data.categories}
-						handleOpenModal={this.handleOpenModal}
+						<Categories 
+							categories = {this.props.data.categories}
+							handleOpenModal={this.handleOpenModal}
 						/>
 						{this.state.modalVisible &&
 							<ModalContainer>
-								<Modal handleClick = {this.handleCloseModalClck}>
-									<h1>Portales</h1>
+								<Modal handleClick = {this.handleCloseModalClick}>
+									<VideoPlayer 
+										autoplay={true}
+										src={this.state.media.src}
+										title={this.state.media.title}
+									/>
 								</Modal>
 							</ModalContainer>
 						}
