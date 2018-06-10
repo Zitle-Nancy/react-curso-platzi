@@ -12,7 +12,7 @@
   "keywords": [
     "react"
   ],
-  "author": "NancyZitle",
+  "author": "Nancy Zitle",
   "license": "ISC",
   "devDependencies": {
     "babel-preset-stage-2": "6.24.1",
